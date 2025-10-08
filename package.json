@@ -1,23 +1,79 @@
 {
   "name": "qr-attendance-system",
   "version": "0.1.0",
+  "description": "A modern, location-based attendance tracking system with QR code scanning",
   "private": true,
+  "type": "module",
+  "keywords": [
+    "attendance",
+    "qr-code",
+    "education",
+    "nextjs",
+    "mongodb",
+    "location-based",
+    "tracking"
+  ],
+  "author": "Prabhu Jee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USERNAME/REPOSITORY.git"
+  },
+  "bugs": {
+    "url": "https://github.com/USERNAME/REPOSITORY/issues"
+  },
+  "homepage": "https://github.com/USERNAME/REPOSITORY#readme",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "seed": "node database/seed.js",
+    "test-db": "node database/test-connection.js",
+    "test-auth": "node test-auth.js",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "clean": "rm -rf .next out dist",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky install || true",
+    "precommit": "lint-staged",
+    "setup-repo": "node scripts/setup-repo.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dompurify": "^3.2.7",
+    "dotenv": "^17.2.3",
+    "express-rate-limit": "^8.1.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "html5-qrcode": "^2.3.8",
+    "lucide-react": "^0.545.0",
+    "mongoose": "^8.19.1",
+    "next": "15.5.4",
+    "next-auth": "^4.24.11",
+    "qrcode": "^1.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@eslint/eslintrc": "^3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@vitest/ui": "^3.2.4",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "jsdom": "^27.0.0",
+    "mongodb-memory-server": "^10.2.3",
+    "postcss": "^8.5.6",
+    "supertest": "^7.1.4",
+    "tailwindcss": "^3.4.18",
+    "vitest": "^3.2.4"
   }
 }

@@ -1,15 +1,10 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +18,113 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* QR Scanner Optimizations */
+#qr-reader {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+#qr-reader video {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#qr-reader__dashboard {
+  background: transparent !important;
+}
+
+#qr-reader__dashboard_section {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 0.375rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#qr-reader__dashboard_section_csr {
+  text-align: center;
+}
+
+#qr-reader__dashboard_section_csr > select {
+  @apply px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+#qr-reader__dashboard_section_csr > button {
+  @apply ml-2 px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors;
+}
+
+/* Responsive QR Code Display */
+.qr-code-container {
+  @apply flex justify-center items-center p-4;
+}
+
+.qr-code-container img {
+  @apply max-w-full h-auto;
+  max-width: min(300px, 80vw);
+  max-height: min(300px, 80vw);
+}
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  .text-responsive {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .heading-responsive {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .container-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+  
+  .card-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  .button-responsive {
+    @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base;
+  }
+}
+
+/* Touch-friendly interactive elements */
+@media (hover: none) and (pointer: coarse) {
+  button, .button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improved focus states for accessibility */
+@layer base {
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
 }

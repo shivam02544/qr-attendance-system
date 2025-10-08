@@ -1,36 +1,199 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# QR Attendance System
 
-## Getting Started
+A modern, location-based attendance tracking system built with Next.js, featuring QR code scanning and real-time attendance management.
 
-First, run the development server:
+## 🚀 Features
 
+- **QR Code Attendance**: Generate and scan QR codes for quick attendance marking
+- **Location Verification**: GPS-based location validation to prevent proxy attendance
+- **Role-Based Access**: Separate dashboards for students, teachers, and administrators
+- **Real-Time Reports**: Comprehensive attendance analytics and reporting
+- **Responsive Design**: Mobile-first design that works on all devices
+- **Security First**: Built-in security measures including rate limiting and input validation
+- **Offline Support**: Progressive Web App capabilities for offline functionality
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15, React 19, Tailwind CSS
+- **Backend**: Next.js API Routes, MongoDB with Mongoose
+- **Authentication**: NextAuth.js
+- **QR Code**: qrcode library for generation, html5-qrcode for scanning
+- **Testing**: Vitest, Testing Library, MongoDB Memory Server
+- **Security**: Helmet, bcryptjs, express-rate-limit, DOMPurify
+
+## 📋 Prerequisites
+
+- Node.js 18+ 
+- MongoDB (local installation or MongoDB Atlas)
+- Modern web browser with camera access for QR scanning
+
+## 🚀 Quick Start
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/USERNAME/REPOSITORY.git
+cd qr-attendance-system
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Configure repository (optional)
+```bash
+npm run setup-repo
+```
+This script automatically updates repository URLs in documentation files.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Set up environment variables
+```bash
+cp .env.local.example .env.local
+```
 
-## Learn More
+Edit `.env.local` with your configuration:
+```env
+MONGODB_URI=mongodb://localhost:27017/qr-attendance-system
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key-here
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 5. Seed the database (optional)
+```bash
+npm run seed
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 6. Run the development server
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-## Deploy on Vercel
+## 📱 User Roles & Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Students
+- Scan QR codes to mark attendance
+- View attendance history and statistics
+- Enroll in classes
+- Location-based attendance verification
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Teachers
+- Generate QR codes for attendance sessions
+- Manage classes and student enrollments
+- View real-time attendance data
+- Generate attendance reports
+- Export attendance data
+
+### Administrators
+- System-wide analytics and reporting
+- User management (students, teachers)
+- Class management and oversight
+- Security monitoring and logs
+
+## 🧪 Testing
+
+Run the test suite:
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## 📊 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run seed` - Seed database with sample data
+- `npm run test-db` - Test database connection
+- `npm run test-auth` - Test authentication setup
+
+## 🏗️ Project Structure
+
+```
+qr-attendance-system/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   ├── admin/             # Admin pages
+│   ├── student/           # Student pages
+│   └── teacher/           # Teacher pages
+├── components/            # React components
+│   ├── admin/            # Admin-specific components
+│   ├── shared/           # Shared components
+│   ├── student/          # Student-specific components
+│   └── teacher/          # Teacher-specific components
+├── lib/                  # Utility libraries
+├── models/               # MongoDB models
+├── hooks/                # Custom React hooks
+├── tests/                # Test files
+└── database/             # Database utilities
+```
+
+## 🔒 Security Features
+
+- Password hashing with bcryptjs
+- Rate limiting on API endpoints
+- Input validation and sanitization
+- CSRF protection
+- Secure headers with Helmet
+- Environment variable protection
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically on push
+
+### Manual Deployment
+```bash
+npm run build
+npm start
+```
+
+## 📖 Documentation
+
+- [Security Guidelines](./SECURITY.md)
+- [Responsive Design](./RESPONSIVE_DESIGN.md)
+- [Authentication Setup](./auth-README.md)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](../../issues) page
+2. Create a new issue with detailed information
+3. Include steps to reproduce any bugs
+
+## 👨‍💻 Author
+
+**Prabhu Jee**
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- MongoDB team for the database solution
+- All contributors who helped build this project
