@@ -31,7 +31,7 @@ A modern, location-based attendance tracking system built with Next.js, featurin
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY.git
+git clone https://github.com/shivam02544/qr-attendance-system.git
 cd qr-attendance-system
 ```
 
