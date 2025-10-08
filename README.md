@@ -176,9 +176,6 @@ npm start
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
@@ -191,9 +188,5 @@ If you encounter any issues or have questions:
 ## 👨‍💻 Author
 
 **Prabhu Jee**
+LinkedIn- https://www.linkedin.com/in/prabhat001?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
-## 🙏 Acknowledgments
-
-- Next.js team for the amazing framework
-- MongoDB team for the database solution
-- All contributors who helped build this project
