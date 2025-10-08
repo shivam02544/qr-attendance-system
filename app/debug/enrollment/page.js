@@ -158,7 +158,7 @@ export default function EnrollmentDebugPage() {
           <h2 className="text-lg font-semibold text-blue-900 mb-4">Troubleshooting Steps</h2>
           <ol className="list-decimal list-inside space-y-2 text-blue-800">
             <li>Check if your user exists in the database (DB User Exists should be ✅)</li>
-            <li>Verify your account role is 'student' (DB User Role should be 'student')</li>
+            <li>Verify your account role is &apos;student&apos; (DB User Role should be &apos;student&apos;)</li>
             <li>Ensure your account is active (DB User Active should be ✅)</li>
             <li>If any of the above are ❌, try logging out and logging back in</li>
             <li>If the issue persists, contact an administrator</li>

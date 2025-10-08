@@ -40,7 +40,7 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky install || true",
+    "prepare": "node -e \"if(process.env.CI){process.exit(0)} try{require('husky').install()}catch(e){process.exit(0)}\"",
     "precommit": "lint-staged",
     "setup-repo": "node scripts/setup-repo.js"
   },

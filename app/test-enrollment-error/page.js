@@ -120,11 +120,11 @@ export default function TestEnrollmentErrorPage() {
           <div className="mt-8 p-4 bg-blue-50 rounded-md">
             <h3 className="text-sm font-medium text-blue-800 mb-2">Expected Behavior:</h3>
             <ul className="text-xs text-blue-700 space-y-1">
-              <li>• "Not Enrolled" → "You are not enrolled in this class. Please contact your teacher to enroll."</li>
-              <li>• "Already Enrolled" → "You are already enrolled in this class."</li>
-              <li>• "Enrollment Closed" → "Enrollment for this class is closed. Please contact your teacher."</li>
-              <li>• "Expired QR" → "This QR code has expired. Please ask your teacher for a new one."</li>
-              <li>• "Already Used" → "You have already marked attendance for this session."</li>
+              <li>• &quot;Not Enrolled&quot; → &quot;You are not enrolled in this class. Please contact your teacher to enroll.&quot;</li>
+              <li>• &quot;Already Enrolled&quot; → &quot;You are already enrolled in this class.&quot;</li>
+              <li>• &quot;Enrollment Closed&quot; → &quot;Enrollment for this class is closed. Please contact your teacher.&quot;</li>
+              <li>• &quot;Expired QR&quot; → &quot;This QR code has expired. Please ask your teacher for a new one.&quot;</li>
+              <li>• &quot;Already Used&quot; → &quot;You have already marked attendance for this session.&quot;</li>
             </ul>
           </div>
         </div>
